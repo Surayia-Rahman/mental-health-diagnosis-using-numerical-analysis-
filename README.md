@@ -76,4 +76,38 @@ Cross-validated using 5-fold CV (though the scores output was cut off).
 
 # b. likely to suicide 
 
+## Data Preprocessing & Visualization
+
+Separated the dataset into suicide and non-suicide classes.
+
+Generated word clouds to visualize common words in both categories.
+
+Analyzed and compared word counts in each category using distribution plots.
+
+## Text Vectorization
+
+Tokenized and cleaned the text using RegexpTokenizer and removed stopwords.
+
+Used the Google News Word2Vec model to vectorize the text by averaging the vectors of valid tokens.
+
+Created a new column in the dataframe to store these vectors.
+
+Dropped entries with missing vectors to clean the dataset.
+
+## Dataset Preparation for Model
+
+Converted class labels into binary format (1 for suicide, 0 for non-suicide).
+
+Split the data into training and testing sets.
+
+Converted the data into PyTorch tensors and created DataLoaders for efficient batching.
+
+## Model Definition & Training
+
+Defined a deep neural network with 3 hidden layers and ReLU activations, ending with a Sigmoid output layer.
+
+Trained the model using binary cross-entropy loss and the Adam optimizer.
+
+Tracked and visualized the training loss over 50 epochs.
+
 
